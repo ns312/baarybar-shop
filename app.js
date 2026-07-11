@@ -6,36 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
 });
 
-/* 1. Theme Toggle Management */
 function initTheme() {
-    const toggleBtn = document.getElementById('theme-toggle');
-    if (!toggleBtn) return;
-
-    const sunIcon = toggleBtn.querySelector('.sun-icon');
-    const moonIcon = toggleBtn.querySelector('.moon-icon');
-
-    // Retrieve saved theme or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.body.setAttribute('data-theme', savedTheme);
-    updateIcons(savedTheme);
-
-    toggleBtn.addEventListener('click', () => {
-        const currentTheme = document.body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.body.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateIcons(newTheme);
-    });
-
-    function updateIcons(theme) {
-        if (theme === 'dark') {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-        } else {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        }
-    }
+    document.body.setAttribute('data-theme', 'light');
 }
 
 /* 2. Interactive AC Unit Showcase Animation */

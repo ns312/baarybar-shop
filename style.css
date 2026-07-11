@@ -4,45 +4,31 @@
     --font-primary: 'Inter', sans-serif;
     --font-heading: 'Montserrat', sans-serif;
 
-    /* Theme colors: Dark Premium Default */
-    --bg-main: #0a0f1d;
-    --bg-card: rgba(255, 255, 255, 0.03);
-    --border-color: rgba(255, 255, 255, 0.08);
-    --text-main: #f1f5f9;
-    --text-muted: #94a3b8;
+    /* Theme colors: Light Premium Default */
+    --bg-main: #f8fafc;
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --border-color: rgba(15, 23, 42, 0.08);
+    --text-main: #0f172a;
+    --text-muted: #64748b;
 
-    --color-primary: #10b981; /* Emerald Green for premium reliability */
-    --color-primary-glow: rgba(16, 185, 129, 0.15);
-    --color-info: #06b6d4; /* Cyan/Ice for cooling */
-    --color-info-glow: rgba(6, 182, 212, 0.2);
-    --color-accent: #f97316; /* Orange for heating */
-    --color-accent-glow: rgba(249, 115, 22, 0.2);
+    --color-primary: #059669; /* Emerald Green */
+    --color-primary-glow: rgba(5, 150, 105, 0.1);
+    --color-info: #0891b2; /* Cyan/Ice */
+    --color-info-glow: rgba(8, 145, 178, 0.1);
+    --color-accent: #ea580c; /* Orange */
+    --color-accent-glow: rgba(234, 88, 12, 0.1);
 
-    --glass-bg: rgba(10, 15, 29, 0.7);
+    --glass-bg: rgba(248, 250, 252, 0.85);
     --glass-blur: 16px;
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
-    --shadow-premium: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    --shadow-premium: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Light Theme Variables */
-[data-theme="light"] {
-    --bg-main: #f8fafc;
-    --bg-card: rgba(255, 255, 255, 0.7);
-    --border-color: rgba(15, 23, 42, 0.08);
-    --text-main: #0f172a;
-    --text-muted: #64748b;
-    --glass-bg: rgba(248, 250, 252, 0.85);
-    --color-primary: #059669;
-    --color-primary-glow: rgba(5, 150, 105, 0.1);
-    --color-info: #0891b2;
-    --color-info-glow: rgba(8, 145, 178, 0.1);
-    --color-accent: #ea580c;
-    --color-accent-glow: rgba(234, 88, 12, 0.1);
-}
+
 
 /* Reset */
 * {
@@ -595,6 +581,15 @@ header {
     margin-bottom: 4px;
 }
 
+.price-old {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 2px;
+}
+
+
 .price-kgs {
     font-size: 26px;
     font-weight: 900;
@@ -1113,4 +1108,9 @@ footer {
     0% { transform: scale(1); opacity: 0.4; }
     100% { transform: scale(1.5); opacity: 0; }
 }
+
+#theme-toggle {
+    display: none !important;
+}
+
 
