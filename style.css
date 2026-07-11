@@ -585,9 +585,11 @@ header {
     font-size: 13px;
     color: var(--text-muted);
     text-decoration: line-through;
+    text-decoration-color: #ef4444; /* Bright red line-through */
     display: block;
     margin-bottom: 2px;
 }
+
 
 
 .price-kgs {
