@@ -10,9 +10,21 @@
   <meta name="keywords" content="кондиционер otex бишкек купить, кондиционеры отех цены бишкек, купить кондиционер duke бишкек, кондиционеры дюк бишкек">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body data-theme="light">
+
+  <!-- Promo Sticky Bar -->
+  <div class="promo-bar">
+    <div class="container promo-bar-container">
+      <span class="promo-badge">Акция</span>
+      <p class="promo-text">
+        🎁 <strong>Дефлектор в подарок</strong> + <strong>Бесплатная доставка</strong> при заказе кондиционера в течение: 
+        <span id="promo-timer" class="promo-timer">10:00</span>
+      </p>
+      <button class="promo-btn" onclick="openDeflectorModal()">Что такое дефлектор?</button>
+    </div>
+  </div>
 
   <!-- Header Section -->
   <header>
@@ -313,6 +325,28 @@
       </div>
     </div>
   </footer>
+
+  <!-- Deflector Modal -->
+  <div id="deflector-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeDeflectorModal()">&times;</button>
+      <div class="modal-body-grid">
+        <div class="modal-img-wrapper">
+          <img src="images/deflector.jpg" alt="Защитный экран-дефлектор для кондиционера">
+        </div>
+        <div class="modal-text-content">
+          <h3 class="modal-title">Защитный экран-дефлектор</h3>
+          <p class="modal-desc">Обычно при работе кондиционера холодный воздух дует прямо на диван, кровать или рабочий стол, вызывая простуду. Специальный дефлектор решает эту проблему!</p>
+          <ul class="deflector-benefits">
+            <li><strong>Защита здоровья:</strong> Направляет ледяной поток параллельно потолку, защищая вас от сквозняков и простуды.</li>
+            <li><strong>Комфорт в комнате:</strong> Обеспечивает плавное и равномерное распределение охлаждения по всему помещению.</li>
+            <li><strong>Простой монтаж:</strong> Легко крепится на кондиционер без сверления стен и надежно фиксируется.</li>
+          </ul>
+          <p class="deflector-gift-status">🔥 <strong>Подарим и бесплатно установим</strong> вместе с кондиционером при заказе прямо сейчас!</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="app.js"></script>

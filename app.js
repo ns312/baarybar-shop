@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+    initPromoBar();
     initACShowcase();
     initBTUCalculator();
     initQuiz();
@@ -255,3 +256,54 @@ function initScrollAnimations() {
         observer.observe(el);
     });
 }
+
+/* Promo Bar and Modal management */
+function initPromoBar() {
+    const timerEl = document.getElementById('promo-timer');
+    if (!timerEl) return;
+
+    let timeKey = 'promo_timer_seconds';
+    let duration = parseInt(sessionStorage.getItem(timeKey));
+    if (isNaN(duration) || duration <= 0) {
+        duration = 600; // 10 minutes default
+    }
+
+    function updateTimer() {
+        let minutes = Math.floor(duration / 60);
+        let seconds = duration % 60;
+        
+        timerEl.textContent = 
+            (minutes < 10 ? '0' : '') + minutes + ':' + 
+            (seconds < 10 ? '0' : '') + seconds;
+
+        if (duration <= 0) {
+            duration = 600; // Reset timer for repeating urgency
+        } else {
+            duration--;
+        }
+        sessionStorage.setItem(timeKey, duration);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+}
+
+// Modal functions
+window.openDeflectorModal = function() {
+    const modal = document.getElementById('deflector-modal');
+    if (modal) modal.classList.add('active');
+}
+
+window.closeDeflectorModal = function() {
+    const modal = document.getElementById('deflector-modal');
+    if (modal) modal.classList.remove('active');
+}
+
+// Close modal on click outside
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById('deflector-modal');
+    if (e.target === modal) {
+        modal.classList.remove('active');
+    }
+});
+
