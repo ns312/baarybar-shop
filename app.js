@@ -263,9 +263,15 @@ function initPromoBar() {
     if (!timerEl) return;
 
     let timeKey = 'promo_timer_seconds';
-    let duration = parseInt(sessionStorage.getItem(timeKey));
+    let duration = 600; // default 10 minutes
+    try {
+        const saved = sessionStorage.getItem(timeKey);
+        if (saved) duration = parseInt(saved);
+    } catch (e) {
+        // Private mode / In-app WebView protection
+    }
     if (isNaN(duration) || duration <= 0) {
-        duration = 600; // 10 minutes default
+        duration = 600;
     }
 
     function updateTimer() {
@@ -281,7 +287,11 @@ function initPromoBar() {
         } else {
             duration--;
         }
-        sessionStorage.setItem(timeKey, duration);
+        try {
+            sessionStorage.setItem(timeKey, duration);
+        } catch (e) {
+            // Private mode / In-app WebView protection
+        }
     }
 
     updateTimer();
