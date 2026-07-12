@@ -1,0 +1,15 @@
+{
+  "name": "baarybar-backend",
+  "version": "1.0.0",
+  "description": "AI Sales Assistant Webhook for WhatsApp via GreenAPI and Gemini",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.1.1",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
